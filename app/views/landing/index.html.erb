@@ -1,93 +1,116 @@
-<div class="background">
-    <div class="content">
-        <h1 class="main-header">Life is Awesome</h1>
-        <p class="text-center text-medium">"You only live once"</p>
+<div class="landing">
+    <div class="background">
+        <div class="content">
+            <h1 class="main-header">Life is Awesome</h1>
+            <p class="text-center text-medium">"You only live once"</p>
+        </div>
     </div>
+
+    <div class="background-2">
+        <div class="content text-center">
+            <h1 class="white">Life Learning</h1>
+            <hr class="divider-white">
+            <p class="text-small">“A person who has good thoughts cannot ever be ugly. You can have a wonky nose and a crooked mouth and a double chin and stick-out teeth, but if you have good thoughts they will shine out of your face like sunbeams and you will always look lovely."</p>
+        </div>
+    </div>
+
+    <section class="features-container">
+        <h1 class="feature-title text-center">Traveling Around The World</h1>
+        <hr class="divider-orange">
+        <div class="features text-center">
+            <div class="feature">
+                <%= fa_icon 'globe 4x', class: 'icon-settings'%>
+                <h2>Exclusive Package</h2>
+            </div>
+            <div class="feature">
+                <%= fa_icon 'bed 4x', class: 'icon-settings'%>
+                <h2>Peace of Mind</h2>
+            </div>
+            <div class="feature">
+                <%= fa_icon 'plane 4x', class: 'icon-settings'%>
+                <h2>Best Travel Guide</h2>
+            </div>
+            <div class="feature">
+                <%= fa_icon 'suitcase 4x', class: 'icon-settings'%>
+                <h2>Explore Something</h2>
+            </div>
+        </div>
+    </section>
+
+    <div class="image-box-grid">
+        <div class="image-box-container">
+            <div class="invisible-layout">
+                <div class="image-box-content">
+                    <div class="content text-center">
+                        <h2>Discover</h2>
+                        <h4>You</h4>
+                    </div>
+                </div>
+            </div>
+            <%= image_tag "image10.jpeg", class: 'image-box' %>
+        </div>
+        <div class="image-box-container">
+            <div class="invisible-layout">
+                <div class="image-box-content">
+                    <div class="content text-center">
+                        <h2>The</h2>
+                        <h4>Only</h4>
+                    </div>
+                </div>
+            </div>
+            <%= image_tag "image8.jpeg", class: 'image-box' %>
+        </div>
+        <div class="image-box-container">
+            <div class="invisible-layout">
+                <div class="image-box-content">
+                    <div class="content text-center">
+                        <h2>World</h2>
+                        <h4>Live</h4>
+                    </div>
+                </div>
+            </div>
+            <%= image_tag "image11.jpeg", class: 'image-box' %>
+        </div>
+        <div class="image-box-container">
+            <div class="invisible-layout">
+                <div class="image-box-content">
+                    <div class="content text-center">
+                        <h2>Together</h2>
+                        <h4>Once</h4>
+                    </div>
+                </div>
+            </div>
+            <%= image_tag "image9.jpeg", class: 'image-box' %>
+        </div>
+    </div>
+
+    <div class="bg-dark">
+        <div class="container text-center">
+            <div class="call-to-action">
+                <h2>Start Exploring the World!</h2>
+                <a class="btn btn-default" href="#">Buy Ticket Now!</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="features-container">
+        <div class="content text-center">
+            <h1 class="text-center">My Contact Information</h1>
+            <hr class="divider-orange">
+            <p class="content text-small-black">
+                Here is my contact. Please contact me if you have any inquiries related to travelling or ticketing. Don't worry I will not hurt you. I will answer all your call or message as soon as possible. Please share my contact to all of your friends. I will
+                give you referral fee buddy. Cheers!
+            </p>
+        </div>
+        <div class="col-lg-4 col-lg-offset-2 text-center">
+            <%= fa_icon 'phone 4x', class: 'icon-settings'%>
+            <p>123-456-6789</p>
+        </div>
+        <div class="col-lg-4 text-center">
+            <%= fa_icon 'envelope-o 4x', class: 'icon-settings'%>
+            <p>
+                <a href="mailto:your-email@your-domain.com">hello@travel.com</a>
+            </p>
+        </div>
+    </section>
 </div>
-
-<div class="background-2">
-    <div class="content text-center">
-        <h1 class="white">Life Learning</h1>
-        <hr class="divider-white">
-        <p class="text-small">“A person who has good thoughts cannot ever be ugly. You can have a wonky nose and a crooked mouth and a double chin and stick-out teeth, but if you have good thoughts they will shine out of your face like sunbeams and you will always look lovely."</p>
-    </div>
-</div>
-
-<section class="features-container">
-    <h1 class="feature-title text-center">Traveling Around The World</h1>
-    <hr class="divider-orange">
-    <div class="features text-center">
-        <div class="feature">
-            <%= fa_icon 'globe 4x', class: 'icon-settings'%>
-            <h2>Exclusive Package</h2>
-        </div>
-        <div class="feature">
-            <%= fa_icon 'bed 4x', class: 'icon-settings'%>
-            <h2>Peace of Mind</h2>
-        </div>
-        <div class="feature">
-            <%= fa_icon 'plane 4x', class: 'icon-settings'%>
-            <h2>Best Travel Guide</h2>
-        </div>
-        <div class="feature">
-            <%= fa_icon 'suitcase 4x', class: 'icon-settings'%>
-            <h2>Explore Something</h2>
-        </div>
-    </div>
-</section>
-
-<div class="image-box-grid">
-    <div class="image-box-container">
-        <div class="invisible-layout">
-            <div class="image-box-content">
-                <div class="content text-center">
-                    <h2>Discover</h2>
-                    <h4>You</h4>
-                </div>
-            </div>
-        </div>
-        <%= image_tag "image10.jpeg", class: 'image-box' %>
-    </div>
-    <div class="image-box-container">
-        <div class="invisible-layout">
-            <div class="image-box-content">
-                <div class="content text-center">
-                    <h2>The</h2>
-                    <h4>Only</h4>
-                </div>
-            </div>
-        </div>
-        <%= image_tag "image8.jpeg", class: 'image-box' %>
-    </div>
-    <div class="image-box-container">
-        <div class="invisible-layout">
-            <div class="image-box-content">
-                <div class="content text-center">
-                    <h2>World</h2>
-                    <h4>Live</h4>
-                </div>
-            </div>
-        </div>
-        <%= image_tag "image11.jpeg", class: 'image-box' %>
-    </div>
-    <div class="image-box-container">
-        <div class="invisible-layout">
-            <div class="image-box-content">
-                <div class="content text-center">
-                    <h2>Together</h2>
-                    <h4>Once</h4>
-                </div>
-            </div>
-        </div>
-        <%= image_tag "image9.jpeg", class: 'image-box' %>
-    </div>
-</div>
-
-<aside class="bg-dark">
-    <div class="container text-center">
-        <div class="call-to-action">
-            <h2>Seriously, You Should Travel Now!</h2>
-            <a class="btn btn-default" href="#">Buy Ticket Now!</a>
-        </div>
-    </div>
-</aside>
