@@ -1,4 +1,4 @@
 class StaticPagesController < ApplicationController
-  def aboiut
+  def about
   end
 end

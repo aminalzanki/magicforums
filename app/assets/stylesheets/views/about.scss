@@ -1,0 +1,52 @@
+.about {
+    .background-about {
+    background-image: asset-url("image13.jpeg");
+    height: 100vh;
+    width: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .text-large {
+    font-size: 100px;
+    color: white;
+  }
+  .text-medium {
+    font-size: 60px;
+    color: white;
+  }
+  .text-small {
+    font-size: 20px;
+    color: white;
+    margin-left: 120px;
+    margin-right: 120px;
+  }
+
+  hr {
+      border-color: white;
+      border-width: 3px;
+      max-width: 50px;
+  }
+  hr.light {
+      border-color: white;
+  }
+  hr.divider-white {
+      border-color: white;
+  }
+
+  .background-how-it-work {
+    background-color: teal;
+    height: 50vh;
+    width: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
