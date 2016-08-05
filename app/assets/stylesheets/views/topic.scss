@@ -1,0 +1,21 @@
+
+.topic-container {
+      border: 2px solid teal;
+      height: 150px;
+      width: 500px;
+      padding: 20px;
+      margin: 20px;
+      flex: wrap;
+      display: inline-block;;
+      align-items: center;
+      justify-content: space-around;
+}
+.margin-create-topic {
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.background {
+  background-color: teal;
+  display: flex;
+}
