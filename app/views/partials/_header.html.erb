@@ -19,12 +19,6 @@
             <% else %>
                 <li><%= link_to "Topics", topics_path %></li>
                 <% end %>
-
-                <% if current_page?(controller: 'posts', action: 'index') %>
-                <li><%= link_to "New Post", new_post_path %></li>
-            <% else %>
-                <li><%= link_to "Posts", posts_path %></li>
-                <% end %>
             </ul>
         </div>
     </div>
