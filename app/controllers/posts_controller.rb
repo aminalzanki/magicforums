@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 
 def index
   @topic = Topic.includes(:posts).find_by(id: params[:topic_id])
-  @posts = @topic.posts.order("created_at DESC")
+  @posts = @topic.posts.order("created_at ASC")
 end
 
 def new

@@ -1,0 +1,11 @@
+<div class="text-center">
+    <h1>Comments</h1>
+    <% @comments.each do |comment| %>
+    <div class="posts-container text-center">
+        <h3><%= comment.body %></h3>
+        <div class="text-center">
+            <%= link_to "Delete", topic_post_comment_path(@topic, @post, comment), method: :delete, data: { confirm: "Delete?" } %>
+        </div>
+    </div>
+    <% end %>
+</div>

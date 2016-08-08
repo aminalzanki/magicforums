@@ -42,10 +42,10 @@ class CommentsController < ApplicationController
     end
   end
 
-  def destory
-    @comment = comment.find_by(id: params[:id])
-    @topic = @post.topic
+  def destroy
+    @comment = Comment.find_by(id: params[:id])
     @post = @comment.post
+    @topic = @post.topic
 
     if @comment.destroy
       redirect_to topic_post_comments_path(@topic, @post)
