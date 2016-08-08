@@ -33,7 +33,7 @@ class CommentsController < ApplicationController
   def update
     @post = Post.find_by(id: params[:post_id])
     @topic = @post.topic
-    @comment = comment.find_by(id: params[:id])
+    @comment = Comment.find_by(id: params[:id])
 
     if @comment.update(comment_params)
       redirect_to topic_post_comments_path(@topic, @post)
@@ -55,6 +55,6 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:body)
+    params.require(:comment).permit(:body, :image)
   end
 end
