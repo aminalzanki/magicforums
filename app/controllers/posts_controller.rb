@@ -8,6 +8,7 @@ end
 def new
   @topic = Topic.find_by(id: params[:topic_id])
   @post = Post.new
+  authorize @posts
 end
 
 def create

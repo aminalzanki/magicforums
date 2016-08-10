@@ -30,7 +30,8 @@ gem 'bootstrap-sass'
 gem "font-awesome-rails"
 gem 'carrierwave'
 gem "mini_magick"
-
+gem "figaro"
+gem "pundit"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

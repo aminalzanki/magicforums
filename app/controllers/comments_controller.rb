@@ -10,6 +10,7 @@ before_action :authenticate!, only: [:create, :edit, :update, :new, :destroy]
     @post = Post.find_by(id: params[:post_id])
     @topic = @post.topic
     @comment = Comment.new
+    authorize @comment
   end
 
   def create
