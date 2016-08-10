@@ -1,5 +1,5 @@
 <div class="text-center margin-create-topic">
-    <%= form_for(@user, url: sessions_path, html: { id: "user-login-form" }) do |f| %>
+    <%= form_for(:user, url: sessions_path, html: { id: "user-login-form" }) do |f| %>
     <h1 class="text-center">
         Login
     </h1>
@@ -15,7 +15,7 @@
         <h4>
             <%= f.label :text_field, "Password" %>
         </h4>
-        <%= f.text_field :password, required: true, id: "password_digest_field", class: 'form-control' %>
+        <%= f.password_field :password, required: true, id: "password_digest_field", class: 'form-control' %>
     </div>
 
     <div class="form-group text-center">

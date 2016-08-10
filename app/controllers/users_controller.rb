@@ -13,7 +13,18 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = User.find_by(id: params[:id])
+  end
+
   def update
+    @user = User.find_by(id: params[:id])
+
+    if @user.update(users_params)
+      redirect_to root_path
+    else
+      redirect_to edit_user_path(@user)
+    end
   end
 
   private
