@@ -16,7 +16,7 @@ before_action :authenticate!, only: [:create, :edit, :update, :new, :destroy]
   def create
     @post = Post.find_by(id: params[:post_id])
     @topic = @post.topic
-    @comment = Comment.new(comment_params.merge(post_id: params[:post_id]))
+    @comment = current_user.comments.build(comment_params.merge(post_id: params[:post_id]))
 
     if @comment.save
       redirect_to topic_post_comments_path(@topic, @post)

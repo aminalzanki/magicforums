@@ -12,6 +12,7 @@ class TopicsController < ApplicationController
 
   def create
   @topic = current_user.topics.build(topic_params)
+  authorize @topic
 
   if @topic.save
     redirect_to topics_path
@@ -22,10 +23,12 @@ end
 
   def edit
     @topic = Topic.find_by(id: params[:id])
+    authorize @topic
   end
 
   def update
     @topic = Topic.find_by(id: params[:id])
+    authorize @topic
 
     if @topic.update(topic_params)
       redirect_to topics_path
@@ -36,6 +39,7 @@ end
 
   def destroy
     @topic = Topic.find_by(id: params[:id])
+    authorize @topic
 
     if @topic.destroy
       redirect_to topics_path

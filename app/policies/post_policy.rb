@@ -1,21 +1,20 @@
-class TopicPolicy < ApplicationPolicy
-  def new?
-    user.present? && user.admin?
+class PostPolicy < ApplicationPolicy
+
+  def edit?
+    user.present? && record.user == user || user_has_power?
   end
 
-  def create
-    new?
+  def update?
+    edit?
   end
 
-  def edit
-    new?
+  def destroy?
+    edit?
   end
 
-  def update
-    new?
-  end
+  private
 
-  def destroy
-    new?
-  end
+  def user_has_power?
+   user.admin? || user.moderator?
+ end
 end
