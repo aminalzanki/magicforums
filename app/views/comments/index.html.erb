@@ -1,26 +1,14 @@
 <div class="text-center">
-    <h1>Comments</h1>
-    <% @comments.each do |comment| %>
-    <div class="posts-container text-center">
-        <h3><%= comment.body %></h3>
-
-        <div class="form-group">
-            <h4 class="text-center">
-                Comment Image
-            </h4>
-            <div id="preview-image">
-                <% if comment.image? %>
-                <%= image_tag comment.image, class: "img-settings img-responsive center-block" %>
-                <% end %>
-            </div>
-        </div>
-
-        <div class="text-center">
-            <%= link_to "Edit Comment", edit_topic_post_comment_path(@topic, @post, comment) %>
-        </div>
-        <div class="text-center">
-            <%= link_to "Delete", topic_post_comment_path(@topic, @post, comment), method: :delete, data: { confirm: "Delete?" } %>
-        </div>
+    <div id="comments">
+        <h1>Comments</h1>
+        <% @comments.each do |comment| %>
+        <%= render partial: "comment", locals: { comment: comment, post: @post } %>
+        <% end %>
     </div>
-    <% end %>
+</div>
+
+<div id="comments-form-container">
+    <div class="text-center margin-create-topic">
+        <%= render partial: "form", locals: { comment: @comment, post: @post } %>
+    </div>
 </div>
