@@ -1,13 +1,15 @@
 <div class="text-center">
-    <h1>Topics</h1>
-    <% @topics.each do |topic| %>
-    <div class="topic-container text-center">
-        <h3><%= topic.title %></h3>
-        <h5><%= topic.description %></h5>
-        <%= link_to "View Details", topic_posts_path(topic) %>
-        <div class="text-center">
-            <%= link_to "Delete", topic_path(topic), method: :delete, data: { confirm: "Delete?" } %>
-        </div>
-    </div>
-    <% end %>
+    <div id="topics">
+      <h1>Topics</h1>
+      <% @topics.each do |topic| %>
+      <%= render partial: "topic", locals: { topic: topic } %>
+      <% end %>
+  </div>
+</div>
+
+<div id="topics-form-container">
+  <div class="text-center margin-create-topic">
+    <%= render partial: "form", locals: { topic: @topic } %>
+  </div>
+
 </div>

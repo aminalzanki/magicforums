@@ -1,14 +1,16 @@
 class TopicsController < ApplicationController
+  respond_to :js
   before_action :authenticate!, only: [:create, :edit, :update, :new, :destroy]
   def index
     # binding.pry
     @topics = Topic.all.order(id: :ASC)
+    @topic = Topic.new
   end
 
-  def new
-    @topic = Topic.new
-    authorize @topic
-  end
+  # def new
+  #   @topic = Topic.new
+  #   authorize @topic
+  # end
 
   def create
   @topic = current_user.topics.build(topic_params)
