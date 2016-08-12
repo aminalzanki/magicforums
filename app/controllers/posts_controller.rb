@@ -1,14 +1,16 @@
 class PostsController < ApplicationController
+respond_to :js
 before_action :authenticate!, only: [:create, :edit, :update, :new, :destroy]
 def index
   @topic = Topic.includes(:posts).find_by(id: params[:topic_id])
   @posts = @topic.posts.order("created_at ASC")
-end
-
-def new
-  @topic = Topic.find_by(id: params[:topic_id])
   @post = Post.new
 end
+
+# def new
+#   @topic = Topic.find_by(id: params[:topic_id])
+#   @post = Post.new
+# end
 
 def create
   @topic = Topic.find_by(id: params[:topic_id])

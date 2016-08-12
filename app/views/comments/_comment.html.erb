@@ -13,7 +13,7 @@
     </div>
 
     <div class="text-center">
-        <%= link_to "Edit Comment", edit_topic_post_comment_path(post.topic, post, comment) %>
+          <%= link_to "Edit Comment", edit_topic_post_comment_path(post.topic, post, comment) %>
     </div>
     <div class="text-center">
         <%= link_to "Delete", topic_post_comment_path(post.topic, post, comment), method: :delete, data: { confirm: "Delete?" } %>
