@@ -1,4 +1,4 @@
-<div class="posts-container text-center">
+<div id="comment-<%= comment.id %>" class="posts-container text-center">
     <h3><%= comment.body %></h3>
 
     <div class="form-group">
@@ -13,9 +13,9 @@
     </div>
 
     <div class="text-center">
-          <%= link_to "Edit Comment", edit_topic_post_comment_path(post.topic, post, comment) %>
+          <%= link_to "Edit Comment", edit_topic_post_comment_path(comment.post.topic, comment.post, comment), remote: true %>
     </div>
     <div class="text-center">
-        <%= link_to "Delete", topic_post_comment_path(post.topic, post, comment), method: :delete, data: { confirm: "Delete?" } %>
+        <%= link_to "Delete", topic_post_comment_path(comment.post.topic, comment.post, comment), method: :delete, data: { confirm: "Delete?" } %>
     </div>
 </div>

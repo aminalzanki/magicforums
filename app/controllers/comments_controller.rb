@@ -41,8 +41,8 @@ end
   # end
 
   def edit
-    @post = Post.find_by(id: params[:post_id])
-    @topic = @post.topic
+    # @post = Post.find_by(id: params[:post_id])
+    # @topic = @post.topic
     @comment = Comment.find_by(id: params[:id])
   end
 
@@ -52,9 +52,11 @@ end
     @comment = Comment.find_by(id: params[:id])
 
     if @comment.update(comment_params)
-      redirect_to topic_post_comments_path(@topic, @post)
+      flash.now[:success] = "Comment updated"
+      # redirect_to topic_post_comments_path(@topic, @post)
     else
-      redirect_to edit_topic_post_comment_path(@topic, @post, @comment)
+      flash.now[:danger] = @comment.errors.full_messages
+      # redirect_to edit_topic_post_comment_path(@topic, @post, @comment)
     end
   end
 
