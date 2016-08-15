@@ -3,8 +3,9 @@ class TopicsController < ApplicationController
   before_action :authenticate!, only: [:create, :edit, :update, :new, :destroy]
   def index
     # binding.pry
-    @topics = Topic.all.order(id: :ASC)
     @topic = Topic.new
+    # @topics = Topic.all.order(id: :ASC)
+    @topics = Topic.page(params[:page]).per(8).all.order(id: :DESC)
   end
 
   # def new
