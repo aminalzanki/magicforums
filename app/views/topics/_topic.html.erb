@@ -1,7 +1,10 @@
-<div class="topic-container text-center">
+<div id="topic-<%= topic.id %>" class="posts-container text-center">
     <h3><%= topic.title %></h3>
     <h5><%= topic.description %></h5>
     <%= link_to "View Details", topic_posts_path(topic) %>
+    <div class="text-center">
+        <%= link_to "Edit Topic", edit_topic_path(topic), remote: true %>
+    </div>
     <div class="text-center">
         <%= link_to "Delete", topic_path(topic), method: :delete, data: { confirm: "Delete?" } %>
     </div>
