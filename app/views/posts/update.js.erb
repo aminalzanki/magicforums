@@ -1,0 +1,5 @@
+$('#flash-messages-container').html("<%=j render partial: 'partials/flash_messages' %>");
+
+<% if @post.persisted? %>
+$('#post-<%= @post.id %>').replaceWith("<%=j render partial: 'posts/post', locals: { post: @post } %>");
+<% end %>

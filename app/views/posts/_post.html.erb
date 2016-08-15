@@ -1,4 +1,4 @@
-<div class="posts-container text-center">
+<div id="post-<%= post.id %>"class="posts-container text-center">
     <h3><%= post.title %></h3>
     <h5><%= post.body %></h5>
 
@@ -12,11 +12,11 @@
             <% end %>
         </div>
     </div>
-    <%= link_to "View Comments", topic_post_comments_path(@topic, post) %>
+    <%= link_to "View Comments", topic_post_comments_path(post.topic, post) %>
     <div class="text-center">
-        <%= link_to "Edit Post", edit_topic_post_path(@topic, post) %>
+        <%= link_to "Edit Post", edit_topic_post_path(post.topic, post), remote: true %>
     </div>
     <div class="text-center">
-        <%= link_to "Delete Post", topic_post_path(@topic, post), method: :delete, data: { confirm: "Delete?" } %>
+        <%= link_to "Delete Post", topic_post_path(post.topic, post), method: :delete, data: { confirm: "Delete?" } %>
     </div>
 </div>
