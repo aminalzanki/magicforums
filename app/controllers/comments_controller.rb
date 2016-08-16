@@ -46,29 +46,34 @@ end
     # @post = Post.find_by(id: params[:post_id])
     # @topic = @post.topic
     @comment = Comment.find_by(id: params[:id])
+    authorize @comment
   end
 
   def update
-    @post = Post.find_by(id: params[:post_id])
-    @topic = @post.topic
+    # @post = Post.find_by(id: params[:post_id])
+    # @topic = @post.topic
     @comment = Comment.find_by(id: params[:id])
+    authorize @comment
 
     if @comment.update(comment_params)
+      CommentBroadcastJob.set(wait: 0.1.seconds).perform_later("update", @comment)
       flash.now[:success] = "Comment updated"
-      # redirect_to topic_post_comments_path(@topic, @post)
     else
       flash.now[:danger] = @comment.errors.full_messages
-      # redirect_to edit_topic_post_comment_path(@topic, @post, @comment)
     end
   end
 
   def destroy
     @comment = Comment.find_by(id: params[:id])
-    @post = @comment.post
-    @topic = @post.topic
+    authorize @comment
+    # @post = @comment.post
+    # @topic = @post.
 
     if @comment.destroy
-      redirect_to topic_post_comments_path(@topic, @post)
+      flash.now[:success] = "Comment deleted"
+      CommentBroadcastJob.perform_now("destroy", @comment)
+    else
+      flash.now[:danger] = "Error deleting comment"
     end
   end
 
