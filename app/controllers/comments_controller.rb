@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
   def index
     @post = Post.includes(:comments).find_by(id: params[:post_id])
     @topic = @post.topic
-    @comments = @post.comments.order("created_at DESC")
+    @comments = @post.comments.order("created_at ASC")
     @comment = Comment.new
   end
 
@@ -22,6 +22,8 @@ class CommentsController < ApplicationController
   @post = Post.find_by(id: params[:post_id])
 
   if @comment.save
+    # CommentBroadcastJob.set(wait: 0.1.seconds).perform_later("create", @comment)
+    CommentBroadcastJob.perform_later("create", @comment)
     flash.now[:success] = "Comment created"
   else
     flash.now[:danger] = @comment.errors.full_messages

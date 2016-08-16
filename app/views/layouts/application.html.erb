@@ -2,6 +2,15 @@
 <html>
     <head>
         <title>Magicforums</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <% if current_user %>
+              <meta me="<%=current_user.username%>">
+              <% if current_user.admin? || current_user.moderator? %>
+                <meta magic="admin">
+              <% end %>
+            <% end %>
+
         <%= csrf_meta_tags %>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
