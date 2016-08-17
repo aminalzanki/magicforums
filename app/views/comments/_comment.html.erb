@@ -1,36 +1,41 @@
 <div class="comment <%=extra_class%>" data-id="<%= comment.id %>">
-  <div id="comment-<%= comment.id %>" class="posts-container text-center">
-      <h3><%= comment.body %></h3>
+    <div id="comment-<%= comment.id %>" class="posts-container text-center">
+        <h3><%= comment.body %></h3>
 
-      <div class="form-group">
-          <h4 class="text-center">
-              Comment Image
-          </h4>
-          <div id="preview-image">
-              <% if comment.image? %>
-              <%= image_tag comment.image, class: "img-settings img-responsive center-block" %>
-              <% end %>
-          </div>
-      </div>
+        <div class="form-group">
+            <h4 class="text-center">
+                Comment Image
+            </h4>
+            <div id="preview-image">
+                <% if comment.image? %>
+                <%= image_tag comment.image, class: "img-settings img-responsive center-block" %>
+                <% end %>
+            </div>
+        </div>
 
-      <div class="control-panel">
-        <% if comment.user == current_user || current_user&.admin? || current_user&.moderator? %>
+        <div class="control-panel">
+            <% if comment.user == current_user || current_user&.admin? || current_user&.moderator? %>
             <div class="text-center">
-                  <%= link_to "Edit Comment", edit_topic_post_comment_path(comment.post.topic, comment.post, comment), remote: true %>
+                <%= link_to "Edit Comment", edit_topic_post_comment_path(comment.post.topic, comment.post, comment), remote: true %>
             </div>
             <div class="text-center">
                 <%= link_to "Delete", topic_post_comment_path(comment.post.topic, comment.post, comment), method: :delete, data: { confirm: "Delete?" } %>
             </div>
-        <% end %>
+            <% end %>
+        </div>
 
-          <div class="voting-panel">
+        <div class="voting-scoring">
+            <span>You have
+            </span>
+            <span class="voting-panel"><%= comment.total_votes_num %></span>
+            <span>point!</span>
+
             <div class="text-center">
                 <%= link_to "Upvote", upvote_path(comment_id: comment.id), method: :post, remote: true %>
             </div>
             <div class="text-center">
                 <%= link_to "Downvote", downvote_path(comment_id: comment.id), method: :post, remote: true %>
             </div>
-          </div>
-      </div>
-  </div>
+        </div>
+    </div>
 </div>
