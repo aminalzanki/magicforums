@@ -17,6 +17,7 @@ class VotesController < ApplicationController
 
   def find_or_create
     @vote = current_user.votes.find_or_create_by(comment_id: params[:comment_id])
+    @comment = Comment.find_by(id: params[:comment_id])
   end
 
   def updateVote(value)
