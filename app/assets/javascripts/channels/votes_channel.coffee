@@ -1,5 +1,5 @@
 votesChannelFunctions = () ->
-  if $('.comment.index').length > 0
+  if $('.comments.index').length > 0
     App.votes_channel = App.cable.subscriptions.create {
       channel: "VotesChannel"
     },
